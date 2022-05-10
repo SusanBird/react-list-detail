@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
 } from 'react-router-dom';
 import BestsellersPage from './BestsellersPage';
 import BestsellersDetailPage from './BestsellersDetailPage';

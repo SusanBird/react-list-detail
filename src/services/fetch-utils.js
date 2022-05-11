@@ -1,11 +1,18 @@
 import { client, checkError } from './client';
 
-export async function getBestseller() {
+export async function getBestsellers(page) {
+  const numPerPage = 20;
+
+  const start = (page - 1) * numPerPage;
+
   const response = await client
     .from('bestsellers')
-    .select();
+    .select('*', { count: 'exact' })
+    .range(start, start + numPerPage - 1);
 
-  return response.body;
+  const lastPage = Math.ceil(response.count / numPerPage);
+
+  return { ...response, lastPage };
 }
 
 
@@ -16,6 +23,6 @@ export async function getBestsellerById(id) {
     .select()
     .match({ id })
     .single();
-    
+  console.log(response);
   return checkError(response);
 }

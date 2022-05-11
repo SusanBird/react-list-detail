@@ -16,7 +16,7 @@ export default function App() {
           <Route exact path="/">
             <BestsellersPage />
           </Route>
-          <Route exact path="/bestsellers/:id">
+          <Route exact path="/BestsellersDetailPage/:id">
             <BestsellersDetailPage />
           </Route>
         </Switch>

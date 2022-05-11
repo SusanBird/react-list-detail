@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import BestsellersListPage from './BestsellersListPage';
-import { getBestseller } from './services/fetch-utils';
+import { getBestsellers } from './services/fetch-utils';
 
 export default function BestsellersPage() {
   const [bestsellers, setBestsellers] = useState([]);
@@ -12,7 +12,7 @@ export default function BestsellersPage() {
 
   useEffect(() => {
     async function fetch() {
-      const bestbooks = await getBestseller(page);
+      const bestbooks = await getBestsellers(page);
 
       setBestsellers(bestbooks.body);
       setLastPage(bestbooks.lastPage);

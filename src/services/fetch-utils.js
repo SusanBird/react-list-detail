@@ -23,6 +23,5 @@ export async function getBestsellerById(id) {
     .select()
     .match({ id })
     .single();
-  console.log(response);
   return checkError(response);
 }

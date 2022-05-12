@@ -25,3 +25,5 @@ export async function getBestsellerById(id) {
     .single();
   return checkError(response);
 }
+
+//working on netlify deploy
